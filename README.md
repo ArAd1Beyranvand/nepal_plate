@@ -10,15 +10,15 @@ https://platexample.ir/#/discover/nepal
 
 # nepal_plate
 
-Nepal's licence plates for [`plate_core`](https://pub.dev/packages/plate_core) — TODO one sentence: categories, colours, themes, alphabets, advisory validator.
+Nepal's licence plates for [`plate_core`](https://pub.dev/packages/plate_core): the 2020 series (black on white, front and rear for cars, heavy vehicles and three-wheelers) and the 1983–2019 Devanagari series in its category colours, with themes, `NepalAlphabets` and advisory validators.
 
 ```dart
 import 'package:plate_core/plate_core.dart';
 import 'package:nepal_plate/nepal_plate.dart';
 
 PlateCanvas(
-  spec: NepalPlates.private,
-  theme: NepalThemes.private,
+  spec: NepalPlates.carRear,
+  theme: NepalThemes.current,
   validator: const NepalValidator(),
   autoValidate: true,
 );
