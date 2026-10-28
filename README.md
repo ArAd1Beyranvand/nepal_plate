@@ -10,79 +10,66 @@ https://platexample.ir/#/discover/nepal
 
 # nepal_plate
 
-Nepal's licence plates for [`plate_core`](https://pub.dev/packages/plate_core): the 2020 series (black on white, front and rear for cars, heavy vehicles and three-wheelers) and the 1983–2019 Devanagari series in its category colours, with themes, `NepalAlphabets` and advisory validators.
+Nepal's 2020-series and 1983–2019 licence plates for the `plate_core` library, with advisory validators.
+
+## Install
+
+```yaml
+dependencies:
+  plate_core: ^0.12.0
+  nepal_plate: ^0.1.0
+```
+
+## Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
 import 'package:nepal_plate/nepal_plate.dart';
 
 PlateCanvas(
-  spec: NepalPlates.carRear,
+  spec: NepalPlates.heavyFront,
   theme: NepalThemes.current,
   validator: const NepalValidator(),
   autoValidate: true,
+  onChooseCharacter: noCharacterChooser,
 );
 ```
 
-## Also available
+## Contains
 
-- [`plate_core`](https://pub.dev/packages/plate-core) - Paint license plates.
-- [`plate_alphabet`](https://pub.dev/packages/plate-alphabet) - A library of alphabets for license plates.
-- [`plate_keypad`](https://pub.dev/packages/plate-keypad) - A character picker for license plates.
-- [`plate_number_holder`](https://pub.dev/packages/plate-number-holder) - A frame to hold license plate numbers.
-- [`algeria_plate`](https://pub.dev/packages/algeria-plate) - Algeria's licence plates.
-- [`angola_plate`](https://pub.dev/packages/angola-plate) - Angola's licence plates.
-- [`belgium_plate`](https://pub.dev/packages/belgium-plate) - Belgium's licence plates.
-- [`benin_plate`](https://pub.dev/packages/benin-plate) - Benin's licence plates.
-- [`bhutan_plate`](https://pub.dev/packages/bhutan-plate) - Bhutan's licence plates.
-- [`bolivia_plate`](https://pub.dev/packages/bolivia-plate) - Bolivia's licence plates.
-- [`bosnia_and_herzegovina_plate`](https://pub.dev/packages/bosnia-and-herzegovina-plate) - Bosnia and Herzegovina's licence plates.
-- [`botswana_plate`](https://pub.dev/packages/botswana-plate) - Botswana's licence plates.
-- [`brunei_plate`](https://pub.dev/packages/brunei-plate) - Brunei's licence plates.
-- [`burkina_faso_plate`](https://pub.dev/packages/burkina-faso-plate) - Burkina Faso's licence plates.
-- [`cambodia_plate`](https://pub.dev/packages/cambodia-plate) - Cambodia's licence plates.
-- [`central_african_republic_plate`](https://pub.dev/packages/central-african-republic-plate) - Central African Republic's licence plates.
-- [`chile_plate`](https://pub.dev/packages/chile-plate) - Chile's licence plates.
-- [`colombia_plate`](https://pub.dev/packages/colombia-plate) - Colombia's licence plates.
-- [`cuba_plate`](https://pub.dev/packages/cuba-plate) - Cuba's licence plates.
-- [`djibouti_plate`](https://pub.dev/packages/djibouti-plate) - Djibouti's licence plates.
-- [`eritrea_plate`](https://pub.dev/packages/eritrea-plate) - Eritrea's licence plates.
-- [`germany_plate`](https://pub.dev/packages/germany-plate) - Germany's licence plates.
-- [`india_plate`](https://pub.dev/packages/india-plate) - India's licence plates.
-- [`indonesia_plate`](https://pub.dev/packages/indonesia-plate) - Indonesia's licence plates.
-- [`iran_plate`](https://pub.dev/packages/iran-plate) - Iran's licence plates.
-- [`iranshahr_plate`](https://pub.dev/packages/iranshahr-plate) - Iranshahr region's licence plates.
-- [`italy_plate`](https://pub.dev/packages/italy-plate) - Italy's licence plates.
-- [`kyrgyzstan_plate`](https://pub.dev/packages/kyrgyzstan-plate) - Kyrgyzstan's licence plates.
-- [`laos_plate`](https://pub.dev/packages/laos-plate) - Laos's licence plates.
-- [`lebanon_plate`](https://pub.dev/packages/lebanon-plate) - Lebanon's licence plates.
-- [`malaysia_plate`](https://pub.dev/packages/malaysia-plate) - Malaysia's licence plates.
-- [`mali_plate`](https://pub.dev/packages/mali-plate) - Mali's licence plates.
-- [`malta_plate`](https://pub.dev/packages/malta-plate) - Malta's licence plates.
-- [`mongolia_plate`](https://pub.dev/packages/mongolia-plate) - Mongolia's licence plates.
-- [`mozambique_plate`](https://pub.dev/packages/mozambique-plate) - Mozambique's licence plates.
-- [`myanmar_plate`](https://pub.dev/packages/myanmar-plate) - Myanmar's licence plates.
-- [`nepal_plate`](https://pub.dev/packages/nepal-plate) - Nepal's licence plates.
-- [`niger_plate`](https://pub.dev/packages/niger-plate) - Niger's licence plates.
-- [`norway_plate`](https://pub.dev/packages/norway-plate) - Norway's licence plates.
-- [`palestine_plate`](https://pub.dev/packages/palestine-plate) - Palestine's licence plates.
-- [`republic_of_ireland_plate`](https://pub.dev/packages/republic-of-ireland-plate) - Republic of Ireland's licence plates.
-- [`republic_of_the_congo_plate`](https://pub.dev/packages/republic-of-the-congo-plate) - Republic of the Congo's licence plates.
-- [`saint_vincent_and_the_grenadines_plate`](https://pub.dev/packages/saint-vincent-and-the-grenadines-plate) - Saint Vincent and the Grenadines's licence plates.
-- [`serbia_plate`](https://pub.dev/packages/serbia-plate) - Serbia's licence plates.
-- [`slovenia_plate`](https://pub.dev/packages/slovenia-plate) - Slovenia's licence plates.
-- [`spain_plate`](https://pub.dev/packages/spain-plate) - Spain's licence plates.
-- [`sri_lanka_plate`](https://pub.dev/packages/sri-lanka-plate) - Sri Lanka's licence plates.
-- [`sudan_plate`](https://pub.dev/packages/sudan-plate) - Sudan's licence plates.
-- [`suriname_plate`](https://pub.dev/packages/suriname-plate) - Suriname's licence plates.
-- [`tanzania_plate`](https://pub.dev/packages/tanzania-plate) - Tanzania's licence plates.
-- [`thailand_plate`](https://pub.dev/packages/thailand-plate) - Thailand's licence plates.
-- [`timor_leste_plate`](https://pub.dev/packages/timor-leste-plate) - Timor-Leste's licence plates.
-- [`tunisia_plate`](https://pub.dev/packages/tunisia-plate) - Tunisia's licence plates.
-- [`uruguay_plate`](https://pub.dev/packages/uruguay-plate) - Uruguay's licence plates.
-- [`vanuatu_plate`](https://pub.dev/packages/vanuatu-plate) - Vanuatu's licence plates.
-- [`vatican_city_plate`](https://pub.dev/packages/vatican-city-plate) - Vatican City's licence plates.
-- [`venezuela_plate`](https://pub.dev/packages/venezuela-plate) - Venezuela's licence plates.
-- [`vietnam_plate`](https://pub.dev/packages/vietnam-plate) - Vietnam's licence plates.
-- [`yemen_plate`](https://pub.dev/packages/yemen-plate) - Yemen's licence plates.
-- [`zimbabwe_plate`](https://pub.dev/packages/zimbabwe-plate) - Zimbabwe's licence plates.
+- `NepalCountry` — country panel: `nepal`.
+- `NepalPlates` — 7 plate specs: `heavyFront`, `carFront`, `heavyRear`, `carRear`, `threeWheeler`, `legacy`, `legacyDiplomatic`.
+- `NepalThemes` — 7 themes: `current`, `legacyPrivate`, `legacyPublic`, `legacyGovernment`, `legacyCorporation`, `legacyTourist`, `legacyDiplomatic`.
+- `NepalValidator` — advisory validator; flags the frame, never blocks a keystroke.
+- `NepalLegacyValidator` — advisory validator; flags the frame, never blocks a keystroke.
+- `NepalDiplomaticValidator` — advisory validator; flags the frame, never blocks a keystroke.
+
+## Plates
+
+Nepal's plates: the 2020 series and the 1983–2019 series it replaced.
+
+**2020 series** (Latin, black on white, a left strip with the flag and a
+blue `NEP`): `BAGMATI B AB 0123`, a province, a class code, two series
+letters and four digits. Two designs: *front* (caption above one serial row)
+and *rear* (caption, class and letters, number on three rows), the rear in
+three physical sizes. A field is one slot: the province is a picked name, the
+class one or two characters (`C`, `C1`), the series two letters, the
+number four digits. Pair every one with `NepalThemes.current`.
+
+**1983–2019 series** (Devanagari): zone code, a one or two digit lot, a
+class letter and four digits, over two rows. One design serves private,
+public, government, national corporation and tourist plates; the category is
+the theme and the class letters the picker offers. The diplomatic plate has
+its own: the country number, a fixed `सी.डी.` and a serial, echoed in Latin
+below. Zone and class are picked from alphabets; the class letters are the
+article's table, and the colours of each category come from the photographs.
+
+Not implemented: the narrow one-line front plates of the 1983–2019 series
+(their photographs are close crops that did not fit, and the national
+corporation front was not fitted at all); sizes of the 1983–2019 plates.
+The 1983–2019 numerals are stored as `0-9` and printed in Devanagari.
+
+## Part of plate
+
+Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
+
