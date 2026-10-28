@@ -211,7 +211,9 @@ class _Canvas {
       box: PlateBox(left, cy - box / 2, right - left, box),
       length: length,
       minLength: minLength,
-      spacing: length > 1 && fixed ? max(0, (right - left) / length - 0.6 * 0.72 * box) : 0,
+      spacing: length > 1 && fixed
+          ? max(0, (right - left) / length - 0.6 * 0.72 * box)
+          : 0,
     );
   }
 
@@ -276,10 +278,18 @@ abstract final class NepalPlates {
   );
 
   /// 2020 rear plate of a heavy vehicle (360 × 210 mm).
-  static final PlateSpec heavyRear = _rear('np.heavy_rear', _Layout.heavyRearHeight, _Layout.rear);
+  static final PlateSpec heavyRear = _rear(
+    'np.heavy_rear',
+    _Layout.heavyRearHeight,
+    _Layout.rear,
+  );
 
   /// 2020 rear plate of a car (300 × 185 mm).
-  static final PlateSpec carRear = _rear('np.car_rear', _Layout.carRearHeight, _Layout.rear);
+  static final PlateSpec carRear = _rear(
+    'np.car_rear',
+    _Layout.carRearHeight,
+    _Layout.rear,
+  );
 
   /// 2020 plate of a three-wheeler, front and rear (240 × 130 mm).
   static final PlateSpec threeWheeler = _rear(
@@ -358,7 +368,13 @@ abstract final class NepalPlates {
     ),
   ];
 
-  static PlateSpec _front(String id, double height, _Fields f, double flagLeft, double flagWidth) {
+  static PlateSpec _front(
+    String id,
+    double height,
+    _Fields f,
+    double flagLeft,
+    double flagWidth,
+  ) {
     final _Canvas c = _Canvas(height);
     final double flagHeight = flagWidth / _Layout.flagAspect;
     final double flagTop = c.y(30);

@@ -69,7 +69,9 @@ class NepalDiplomaticValidator extends GatedPlateValidator {
   PlateValidation judge(PlateEntry entry) {
     final RegExp digits = RegExp(r'^[0-9]{1,2}$');
     if (!digits.hasMatch(entry.group('country'))) {
-      return const PlateValidation.invalid('The country number is 1 or 2 digits.');
+      return const PlateValidation.invalid(
+        'The country number is 1 or 2 digits.',
+      );
     }
     if (!digits.hasMatch(entry.group('serial'))) {
       return const PlateValidation.invalid('The serial is 1 or 2 digits.');
