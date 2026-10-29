@@ -1,5 +1,11 @@
 import 'package:plate_core/plate_core.dart';
 
+// TODO(py): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
+// TODO(ts): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
+// TODO(kt): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
+// TODO(py): [H9] Python re: \d/\w match Unicode; keep explicit [0-9]/[A-Z] classes (or re.ASCII).
+// TODO(ts): [H9] same flavour as Dart; port as is, cover accept/reject in the vectors (D9).
+// TODO(kt): [H9] Regex engine differs per target (JVM/JS/Native): keep to portable syntax.
 /// Judges a plate of the 2020 series: `BAGMATI B AB 0123`. Reports, never bars
 /// a keystroke.
 ///
@@ -31,6 +37,9 @@ class NepalValidator extends GatedPlateValidator {
   }
 }
 
+// TODO(py): [H9] Python re: \d/\w match Unicode; keep explicit [0-9]/[A-Z] classes (or re.ASCII).
+// TODO(ts): [H9] same flavour as Dart; port as is, cover accept/reject in the vectors (D9).
+// TODO(kt): [H9] Regex engine differs per target (JVM/JS/Native): keep to portable syntax.
 /// Judges a plate of the 1983–2019 series: zone, a one or two digit lot, a
 /// class letter and four digits (`X # X ####`).
 class NepalLegacyValidator extends GatedPlateValidator {
@@ -57,6 +66,9 @@ class NepalLegacyValidator extends GatedPlateValidator {
   }
 }
 
+// TODO(py): [H9] Python re: \d/\w match Unicode; keep explicit [0-9]/[A-Z] classes (or re.ASCII).
+// TODO(ts): [H9] same flavour as Dart; port as is, cover accept/reject in the vectors (D9).
+// TODO(kt): [H9] Regex engine differs per target (JVM/JS/Native): keep to portable syntax.
 /// Judges a 1983–2019 diplomatic plate: a country or organisation number, the
 /// fixed `C.D.` and a serial, each 1 or 2 digits.
 class NepalDiplomaticValidator extends GatedPlateValidator {
