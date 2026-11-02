@@ -1,7 +1,7 @@
 name: nepal_plate
 description: "Nepal's licence plates for the plate_core library: the 2020 series and the 1983–2019 Devanagari series, with themes, alphabets and advisory validators."
 version: 0.1.0
-repository: https://github.com/ArAd1Beyranvand/nepal_plate
+repository: https://github.com/ArAd1Beyranvand/nepal_plate/tree/main/flutter
 resolution: workspace
 
 environment:
