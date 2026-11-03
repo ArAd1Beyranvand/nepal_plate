@@ -1,28 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:nepal_plate/nepal_plate.dart';
+import 'package:flutter/widgets.dart';
 import 'package:plate_core/plate_core.dart';
+import 'package:nepal_plate/nepal_plate.dart';
 
-void main() => runApp(const ExampleApp());
-
-/// Shows one editable plate: tap a slot and type to fill it in.
-class ExampleApp extends StatelessWidget {
-  const ExampleApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: PlateCanvas(
-              spec: NepalPlates.heavyFront,
-              theme: NepalThemes.current,
-              onChooseCharacter: (alphabet) async => null,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+void main() => runApp(
+  PlateExampleApp(spec: NepalPlates.heavyFront, theme: NepalThemes.current),
+);

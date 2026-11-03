@@ -26,6 +26,4 @@ abstract final class NepalColors {
   /// The flag's crimson and border blue.
   static const Color flagCrimson = Color(0xFFDC143C);
   static const Color flagBlue = Color(0xFF003893);
-
-  static const Color inactive = Color(0xFFB0B0B0);
 }

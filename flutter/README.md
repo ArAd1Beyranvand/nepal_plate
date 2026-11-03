@@ -6,13 +6,24 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the resilient people of Nepal to view examples:
 
-https://platexample.ir/#/discover/nepal
+https://platexample.ir/#/discover/nepal:flutter
 
 # nepal_plate
 
-Nepal's 2020-series and 1983–2019 licence plates for the `plate_core` library, with advisory validators.
+Nepal's licence plates for the plate_core library: the 2020 series and the 1983–2019 Devanagari series, with themes, alphabets and advisory validators.
 
-## Install
+## Languages
+
+| Language | Folder | Example |
+| --- | --- | --- |
+| Flutter / Dart | [`flutter/`](https://github.com/ArAd1Beyranvand/nepal_plate/tree/main/flutter) | [platexample](https://platexample.ir/#/discover/nepal:flutter) |
+| Kotlin | [`kotlin/`](https://github.com/ArAd1Beyranvand/nepal_plate/tree/main/kotlin) | [platexample](https://platexample.ir/#/discover/nepal:kotlin) |
+| Python | [`python/`](https://github.com/ArAd1Beyranvand/nepal_plate/tree/main/python) | [platexample](https://platexample.ir/#/discover/nepal:python) |
+| TypeScript | [`typescript/`](https://github.com/ArAd1Beyranvand/nepal_plate/tree/main/typescript) | [platexample](https://platexample.ir/#/discover/nepal:typescript) |
+
+## Quick start
+
+### Install
 
 ```yaml
 dependencies:
@@ -20,7 +31,7 @@ dependencies:
   nepal_plate: ^0.1.0
 ```
 
-## Use
+### Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -35,14 +46,36 @@ PlateCanvas(
 );
 ```
 
-## Contains
+## Specs
 
-- `NepalCountry` — country panel: `nepal`.
-- `NepalPlates` — 7 plate specs: `heavyFront`, `carFront`, `heavyRear`, `carRear`, `threeWheeler`, `legacy`, `legacyDiplomatic`.
-- `NepalThemes` — 7 themes: `current`, `legacyPrivate`, `legacyPublic`, `legacyGovernment`, `legacyCorporation`, `legacyTourist`, `legacyDiplomatic`.
-- `NepalValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `NepalLegacyValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `NepalDiplomaticValidator` — advisory validator; flags the frame, never blocks a keystroke.
+Each spec is one plate layout.
+
+- `NepalPlates.heavyFront`
+- `NepalPlates.carFront`
+- `NepalPlates.heavyRear`
+- `NepalPlates.carRear`
+- `NepalPlates.threeWheeler`
+- `NepalPlates.legacy`
+- `NepalPlates.legacyDiplomatic`
+
+## Themes
+
+- `NepalThemes.current`
+- `NepalThemes.legacyPrivate`
+- `NepalThemes.legacyPublic`
+- `NepalThemes.legacyGovernment`
+- `NepalThemes.legacyCorporation`
+- `NepalThemes.legacyTourist`
+- `NepalThemes.legacyDiplomatic`
+
+## Change it
+
+`PlateCanvas` takes `spec:` (an entry of `NepalPlates`) and `theme:` (an entry of `NepalThemes`). Set `validator:` to `NepalValidator()` and `autoValidate: true` to show validation hints.
+
+## Also included
+
+- `NepalCountry` — the country panel.
+- `NepalValidator` — the plate validator.
 
 ## Plates
 
@@ -73,3 +106,6 @@ The 1983–2019 numerals are stored as `0-9` and printed in Devanagari.
 
 Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
 
+## License
+
+See [LICENSE](https://github.com/ArAd1Beyranvand/nepal_plate/blob/main/LICENSE).

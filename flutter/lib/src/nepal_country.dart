@@ -53,7 +53,6 @@ abstract final class NepalCountry {
 
   static const PlateCountry nepal = PlateCountry(
     code: 'np',
-    captionLines: <String>[],
     panelColor: NepalColors.flagCrimson,
     panelTextColor: NepalColors.white,
     flagAspectRatio: 71.57 / 87.25,

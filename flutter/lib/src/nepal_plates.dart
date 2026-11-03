@@ -43,8 +43,7 @@ import 'nepal_country.dart';
 /// the diplomatic field boundaries. The car rear photograph is a close crop of
 /// one glyph run, so it takes the heavy rear's layout.
 abstract final class _Layout {
-  static const double width = 500;
-  static const double flatHeight = 248;
+  static const double width = 500, flatHeight = 248;
 
   static const double heavyFrontHeight = 500 * 110 / 520;
   static const double carFrontHeight = 500 * 110 / 450;
@@ -111,8 +110,7 @@ abstract final class _Layout {
 
   /// The flag strip on the rear plates: flag 30–82 wide, `NEP` under it at the
   /// three-wheeler's measured 139.5–161.
-  static const double rearFlagLeft = 30, rearFlagWidth = 50;
-  static const double rearFlagTop = 74;
+  static const double rearFlagLeft = 30, rearFlagWidth = 50, rearFlagTop = 74;
   static const double rearNepTop = 139.5, rearNepBottom = 161;
 
   /// The flag strip on the front plates, in canvas units.
@@ -212,7 +210,7 @@ class _Canvas {
       length: length,
       minLength: minLength,
       spacing: length > 1 && fixed
-          ? max(0, (right - left) / length - 0.6 * 0.72 * box)
+          ? plateRunSpacing((right - left) / length, box)
           : 0,
     );
   }
@@ -229,7 +227,7 @@ class _Canvas {
     final double top = y(inkTop), bottom = y(inkBottom);
     return PlateLabel(
       text: text,
-      box: PlateBox(left, top, right - left, bottom - top),
+      box: PlateBox.fromLTRB(left, top, right, bottom),
       glyphHeight: (bottom - top) / 0.55,
       color: color,
     );
@@ -376,15 +374,12 @@ abstract final class NepalPlates {
     double flagWidth,
   ) {
     final _Canvas c = _Canvas(height);
-    final double flagHeight = flagWidth / _Layout.flagAspect;
-    final double flagTop = c.y(30);
+    final double flagHeight = flagWidth / _Layout.flagAspect, flagTop = c.y(30);
     return PlateSpec(
       id: id,
       country: NepalCountry.nepal,
       canvasWidth: _Layout.width,
       canvasHeight: height,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: _currentSlots(
         c,
         f,
@@ -424,8 +419,6 @@ abstract final class NepalPlates {
       country: NepalCountry.nepal,
       canvasWidth: _Layout.width,
       canvasHeight: height,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: _currentSlots(
         c,
         r.fields,
@@ -470,8 +463,6 @@ abstract final class NepalPlates {
       country: NepalCountry.nepal,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.legacyHeight,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: <PlateSlot>[
         c.field(
           NepalAlphabets.zone,
@@ -505,12 +496,12 @@ abstract final class NepalPlates {
           length: 4,
         ),
       ],
-      textGroups: const <PlateTextGroup>[
-        PlateTextGroup(<int>[0], key: 'zone'),
-        PlateTextGroup(<int>[1], key: 'lot'),
-        PlateTextGroup(<int>[2], key: 'class'),
-        PlateTextGroup(<int>[3], key: 'number'),
-      ],
+      textGroups: PlateTextGroup.perSlot(<String>[
+        'zone',
+        'lot',
+        'class',
+        'number',
+      ]),
     );
   }
 
@@ -530,8 +521,6 @@ abstract final class NepalPlates {
       country: NepalCountry.nepal,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.legacyHeight,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: <PlateSlot>[
         c.field(
           NepalAlphabets.devanagariDigits,
@@ -580,10 +569,7 @@ abstract final class NepalPlates {
           alphabet: NepalAlphabets.digits,
         ),
       ],
-      textGroups: const <PlateTextGroup>[
-        PlateTextGroup(<int>[0], key: 'country'),
-        PlateTextGroup(<int>[1], key: 'serial'),
-      ],
+      textGroups: PlateTextGroup.perSlot(<String>['country', 'serial']),
     );
   }
 }

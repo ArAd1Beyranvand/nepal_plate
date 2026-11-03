@@ -49,7 +49,6 @@ PlateTheme _ink(Color field, Color ink, {double frame = 0}) =>
     PlateTheme.monochrome(
       field: field,
       ink: ink,
-      inactive: NepalColors.inactive,
       borderWidthRatio: frame,
       plateRadiusRatio: 0.05,
     );
